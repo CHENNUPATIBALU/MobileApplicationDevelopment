@@ -2,4 +2,15 @@
     <string name="app_name">Application</string>
     <string name="select_an_option">Select an Option</string>
     <string name="go">Go</string>
+    <string name="display">Display</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="insert">Insert</string>
+    <string name="mm_dd_yyyy">MM/DD/YYYY</string>
+    <string name="date_of_birth">Date of Birth:</string>
+    <string name="cgpa">CGPA</string>
+    <string name="id_number">Id Number:</string>
+    <string name="full_name">Full Name</string>
+    <string name="name">Name:</string>
+    <string name="surname">Surname</string>
 </resources>

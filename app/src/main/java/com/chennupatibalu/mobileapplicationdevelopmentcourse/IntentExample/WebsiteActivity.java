@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.chennupatibalu.mobileapplicationdevelopmentcourse.R;
 
@@ -43,12 +44,12 @@ public class WebsiteActivity extends AppCompatActivity {
         String webUrl = "https://"+urlText;
         String url = "https://www.";
         String nameUrl = url+urlText+defaultDomain;
-        Log.d("website", "goToWebsite: "+nameUrl);
 
         //Checks the URL whether it is in the form "www.website.domain"
         //Example: "www.google.com"
         if(urlText.startsWith("www.") && !urlText.startsWith("https://") && urlText.endsWith(domain))
         {
+            Toast.makeText(this, ""+webUrl, Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(webUrl)));
         }
 
@@ -56,6 +57,7 @@ public class WebsiteActivity extends AppCompatActivity {
         //Example: "https://www.google.com"
         if(urlText.startsWith("https://") && urlText.contains("www.") && urlText.endsWith(domain))
         {
+            Toast.makeText(this, ""+urlText, Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlText)));
         }
 
@@ -63,6 +65,7 @@ public class WebsiteActivity extends AppCompatActivity {
         //Example: "google.com"
         if(!urlText.startsWith("https://") && !urlText.contains("www.") && urlText.endsWith(domain))
         {
+            Toast.makeText(this, ""+url+urlText, Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url+urlText)));
         }
 
@@ -70,19 +73,28 @@ public class WebsiteActivity extends AppCompatActivity {
         //Example: "google"
         if(!urlText.startsWith("https://") && !urlText.contains("www.") && !urlText.endsWith(domain))
         {
+            Toast.makeText(this, ""+nameUrl, Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(nameUrl)));
         }
     }
     private String checkDomain(String url)
     {
-        String domain = url.substring(url.lastIndexOf("."));
-        for(int i=0;i<domainList.size();i++)
+        try
         {
-            if(domain.equals(domainList.get(i)))
+            String domain = url.substring(url.lastIndexOf("."));
+            for(int i=0;i<domainList.size();i++)
             {
-                return domainList.get(i);
+                if(domain.equals(domainList.get(i)))
+                {
+                    return domainList.get(i);
+                }
             }
         }
+        catch(Exception exception)
+        {
+            return url;
+        }
+
         return null;
     }
 }

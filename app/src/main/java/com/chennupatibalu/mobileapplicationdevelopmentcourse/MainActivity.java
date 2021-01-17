@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.chennupatibalu.mobileapplicationdevelopmentcourse.IntentExample.ValuePassingIntentExample;
 import com.chennupatibalu.mobileapplicationdevelopmentcourse.IntentExample.WebsiteActivity;
+import com.chennupatibalu.mobileapplicationdevelopmentcourse.SQLite.SqliteDemo;
 import com.chennupatibalu.mobileapplicationdevelopmentcourse.TemperatureConverter.TemperatureConverter;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         goButton = findViewById(R.id.goButton);
 
 
-        activities = new String[]{"Temperature Converter","Website Intent","Value Passing Intent"};
+        activities = new String[]{"Temperature Converter","Website Intent","Value Passing Intent","SQLite Demo"};
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,activities);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
@@ -65,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
             {
                 Toast.makeText(MainActivity.this, arrayAdapter.getItem(a), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, ValuePassingIntentExample.class));
+            }
+            if(arrayAdapter.getItem(a).equals(activities[3]) && isSelected)
+            {
+                Toast.makeText(MainActivity.this, arrayAdapter.getItem(a), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, SqliteDemo.class));
             }
         });
     }
