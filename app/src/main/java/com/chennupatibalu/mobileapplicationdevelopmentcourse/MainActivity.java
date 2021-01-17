@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         goButton = findViewById(R.id.goButton);
 
 
-        activities = new String[]{"Temperature Converter","Website Intent","Value Passing Intent","SQLite Demo"};
+        activities = new String[]{"Temperature Converter","Website Intent","Value Passing Intent","Animation","SQLite Demo"};
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,activities);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ValuePassingIntentExample.class));
             }
             if(arrayAdapter.getItem(a).equals(activities[3]) && isSelected)
+            {
+                Toast.makeText(MainActivity.this, arrayAdapter.getItem(a), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, Animation.class));
+            }
+            if(arrayAdapter.getItem(a).equals(activities[4]) && isSelected)
             {
                 Toast.makeText(MainActivity.this, arrayAdapter.getItem(a), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, SqliteDemo.class));

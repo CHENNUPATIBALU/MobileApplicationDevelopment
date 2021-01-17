@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApplicationDevelopmentCourse">
-        <activity android:name=".SQLite.SqliteDemo"></activity>
+        <activity android:name=".Animation" android:label="@string/animation"></activity>
+        <activity android:name=".SQLite.SqliteDemo" android:label="@string/sqllite"/>
         <activity android:name=".IntentExample.PassedValueResultedIntent" />
         <activity android:name=".IntentExample.ValuePassingIntentExample" />
         <activity android:name=".IntentExample.WebsiteActivity" />

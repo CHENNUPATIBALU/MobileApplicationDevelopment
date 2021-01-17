@@ -13,4 +13,12 @@
     <string name="full_name">Full Name</string>
     <string name="name">Name:</string>
     <string name="surname">Surname</string>
+    <string name="animation">Animation</string>
+    <string name="fade_in">Fade In</string>
+    <string name="fade_out">Fade Out</string>
+    <string name="slide_in">Slide In</string>
+    <string name="slide_down">Slide Down</string>
+    <string name="animate">Animate</string>
+    <string name="choose_animation">Choose animation:</string>
+    <string name="sqllite">SQLite</string>
 </resources>
